@@ -48,6 +48,8 @@ if opcao == 1:
     df = pd.concat([df, novo_dado], ignore_index=True)
 
     df.to_excel(caminho_excel, index=False)
+
+    print()
     
 
 elif opcao == 2:
