@@ -2,7 +2,7 @@ from Cliente import Cliente
 #    arquivo.py    o nome da nossa classe
 from Criar_conta import Criar_conta
 from adicionar_conta import adicionar_conta
-from Acessar_conta import acessar_conta
+from Acessar_conta import Acessar_conta
 import pandas as pd
 import os
 
@@ -20,7 +20,7 @@ opcao = int(input("R: "))
 if opcao == 1:
     print("Opcao 1 selecionada")
     nome_cliente = str(input("Nome completo: "))
-    cpf = int(input("CPF: "))
+    cpf = str(input("CPF: "))
     tipo_conta  = str(input("Tipo da conta que deseja criar:  "))
 
     df = pd.DataFrame()
@@ -56,10 +56,22 @@ if opcao == 1:
 elif opcao == 2:
     print("Opcao 2 selecionada")
 
-# validar se o CPF informado e o numero 
-cpf = int(input("CPF: "))
-numero_conta = int(input("Digite o numero da conta: "))
+    # validar se o CPF informado e o numero 
+    cpf = str(input("CPF: "))
+    numero_conta = int(input("Digite o numero da conta: "))
 
     acesso = Acessar_conta(cpf, numero_conta)
-    acesso.validar_banco(caminho_excel)
+    resultado = acesso.validar_banco(caminho_excel)
+
+    if resultado == True:
+        print("=====================================\n")
+        print("1 - Saque")
+        print("2 - Deposito")
+        print("3 - Saldo")
+        print("=====================================\n")
+
+        # Crie uma classe para Saque com suas regras e validações
+        # Crie uma classe para Deposito com suas regras e validações
+        # Crie uma classe para Saldo com suas regras e validações
+        # Boa sorte e até breve ;)
 
